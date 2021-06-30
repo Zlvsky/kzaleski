@@ -1,0 +1,49 @@
+@import "./fonts/fonts.css";
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: 'JakartaMedium', sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+}
+a {
+  text-decoration: none;
+}
+:any-link {
+  color: white;
+}
+.scroll-item-active {
+  transition: opacity 1.5s, transform .5s;
+  position: sticky;
+  opacity: 1;
+
+}
+.scroll-item-deactive {
+  transition: opacity 1s, transform 1.5s;
+  position: sticky;
+  transform: translateY(-250%) !important;
+  opacity: 0;
+}
+.scroll-image-active {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  opacity: 1;
+}
+.scroll-image-deactive {
+  transition: all 0.5s ease-in-out;
+  position: absolute !important;
+  opacity: 0;
+}
+.colorful {
+  color: #EF5F63;
+}
+.white-text {
+  color: #fff !important;
+}
