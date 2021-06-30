@@ -2,7 +2,10 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "KZaleski",
+    title: `Tworzenie stron internetowych i aplikacji webowych - web developer Łapy, Białystok`,
+    description: `Programista front-endowy, tworzenie i projektowanie stron internetowych na terenie Łapy, Białystok - Podlasie. Tanie strony wizytówki, sklepy internetowe.`,
+    author: `Krzysztof Zaleski`,
+    siteUrl: 'https://kzaleski.pl',
   },
   plugins: [
     "gatsby-plugin-styled-components",
