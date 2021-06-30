@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 
 import Mockup from '../../assets/images/mockup.png'
-import MockupOne from '../../assets/images/mockup-1.png'
-import MockupTwo from '../../assets/images/mockup-2.png'
-import MockupThree from '../../assets/images/mockup-3.png'
+import MockupOne from '../../assets/images/mock-1.png'
+import MockupTwo from '../../assets/images/mock-2.png'
+import MockupThree from '../../assets/images/mock-3.png'
 
 const WhatWrap = styled.div`
   height: 300vh;
