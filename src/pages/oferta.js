@@ -6,8 +6,8 @@ import { Link } from 'gatsby';
 
 import Bg from '../assets/images/background.png'
 import Check from '../assets/images/icons/check.svg'
-import Servicesimg from '../assets/images/services-1.jpg'
-import Servicesimg2 from '../assets/images/services-2.jpg'
+import Servicesimg from '../assets/images/service-1.jpg'
+import Servicesimg2 from '../assets/images/service-2.jpg'
 
 import Plan1 from '../assets/images/vectors/plan-1.jpg'
 import Plan2 from '../assets/images/vectors/plan-2.jpg'
