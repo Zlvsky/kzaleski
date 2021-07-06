@@ -245,12 +245,13 @@ const KontaktPage = () => {
   </ContactLeft>
 
     <ContactRight>
-      <ContactForm
-         id="contactForm"
+      <form
          name="contactForm"
-          method="POST"
-           data-netlify="true">
-           <input type="hidden" name="contactForm" value="formularz kontaktowy" />
+         method="post"
+         action="/thanks"
+         data-netlify="true"
+         data-netlify-honeypot="bot-field">
+        <input type="hidden" name="bot-field" />
         <FormTitle>Formularz kontaktowy</FormTitle>
         <FlexWrap>
           <FormField>
@@ -315,7 +316,7 @@ const KontaktPage = () => {
         <TextField>
           <SubmitButton type="submit">Wyślij wiadomość</SubmitButton>
         </TextField>
-      </ContactForm>
+      </form>
     </ContactRight>
   </ContactContainer>
   </ContactSection>
