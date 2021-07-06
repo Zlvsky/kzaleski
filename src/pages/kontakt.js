@@ -217,20 +217,31 @@ const KontaktPage = () => {
   const handleChange = (e) => {
    setState({ ...state, [e.target.name]: e.target.value })
  }
- const handleSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'contactForm': form.getAttribute('name'),
-        ...state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
-  }
+ // const handleSubmit = (e) => {
+ //    e.preventDefault()
+ //    const form = e.target
+ //    fetch('/', {
+ //      method: 'POST',
+ //      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+ //      body: encode({
+ //        'contactForm': form.getAttribute('name'),
+ //        ...state,
+ //      }),
+ //    })
+ //      .then(() => navigate(form.getAttribute('action')))
+ //      .catch((error) => alert(error))
+ //  }
+  const handleSubmit = (e) => {
+  e.preventDefault()
+  const form = e.target;
+  let formData = new FormData(form)
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    alert(error))
+}
 
   return (
   <MainTemplate>
