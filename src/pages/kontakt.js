@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import MainTemplate from '../templates/MainTemplate/MainTemplate'
 import styled from 'styled-components'
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Phone from '../assets/images/icons/phone.svg'
 import Mail from '../assets/images/icons/mail.svg'
@@ -204,20 +204,32 @@ transition-property: all;
   color: #fff;
 }
 `
-const KontaktPage = () => {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  })
 
-  const handleChange = e => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
+const KontaktPage = () => {
+  const [state, setState] = React.useState({})
+
+  const handleChange = (e) => {
+   setState({ ...state, [e.target.name]: e.target.value })
+ }
+ const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
     })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
   }
 
   return (
@@ -247,9 +259,14 @@ const KontaktPage = () => {
     <ContactRight>
       <ContactForm
          id="contactForm"
-          method="POST"
-           data-netlify="true"
-            data-netlify-honeypot="bot-field">
+         method="POST"
+         data-netlify="true"
+         onSubmit={handleSubmit}
+        data-netlify-honeypot="bot-field"
+        action="/thanks/"
+        >
+        <input type="hidden" name="contactForm" value="formularz kontaktowy" />
+
         <FormTitle>Formularz kontaktowy</FormTitle>
         <FlexWrap>
           <FormField>
@@ -258,9 +275,8 @@ const KontaktPage = () => {
               name='name'
                type='text'
                 id='input-name'
-                 value={formState.name}
-                 onChange={handleChange}
-                  required aria-required="true"></FormInput>
+                onChange={handleChange}
+                required aria-required="true"></FormInput>
           </FormField>
           <FormField>
             <FormLabel htmlFor='input-telephone' >Telefon</FormLabel>
@@ -268,8 +284,8 @@ const KontaktPage = () => {
               name='telephone'
                type='text'
                 id='input-telephone'
-                 value={formState.phone}
-                 onChange={handleChange}></FormInput>
+                onChange={handleChange}>
+                </FormInput>
           </FormField>
         </FlexWrap>
 
@@ -280,17 +296,14 @@ const KontaktPage = () => {
               name='emailAddress'
                type='email'
                 id='input-email'
-                 value={formState.email}
-                 onChange={handleChange}
-                  required aria-required="true"></FormInput>
+                required aria-required="true"
+                onChange={handleChange}></FormInput>
           </FormField>
           <FormField>
             <FormLabel htmlFor='input-subject' className="required">Temat</FormLabel>
             <FormSelect
               name='subject'
                id='input-subject'
-                value={formState.subject}
-                onChange={handleChange}
                  required aria-required="true">
               <FormOption value="Wybierz" defaultValue >Wybierz</FormOption>
               <FormOption value="Zwykłe pytanie">Zwykłe pytanie</FormOption>
@@ -306,9 +319,8 @@ const KontaktPage = () => {
             name="message"
              id='input-message'
               rows='5'
-               value={formState.message}
-               onChange={handleChange}
-                required aria-required="true"></FormMessage>
+              required aria-required="true"
+              onChange={handleChange}></FormMessage>
         </TextField>
 
         <TextField>
