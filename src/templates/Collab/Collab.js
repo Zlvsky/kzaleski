@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 import CollabVector from '../../assets/images/vectors/collab.svg'

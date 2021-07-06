@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from "gatsby-image"
-import { Link } from "gatsby"
 
 import Analitycs from '../../assets/images/vectors/analitycs.png'
 import Client from '../../assets/images/vectors/client.png'
 import Coding from '../../assets/images/vectors/coding.png'
-import Design from '../../assets/images/vectors/design.png'
 import Testing from '../../assets/images/vectors/testing.png'
-import Web from '../../assets/images/vectors/web.png'
+
 
 
 const HowWrap = styled.div`

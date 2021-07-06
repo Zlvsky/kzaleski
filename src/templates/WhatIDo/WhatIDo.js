@@ -112,17 +112,11 @@ class WhatIDo extends Component {
   }
   refWrap = React.createRef();
   refContent = React.createRef();
-  refContent2 = React.createRef();
-  refContent3 = React.createRef();
 
-  refMockup1 = React.createRef();
-  refMockup2 = React.createRef();
-  refMockup3 = React.createRef();
   componentDidMount() {
     window.addEventListener('scroll', this.updateScroll);
   }
   updateScroll = (event) => {
-    let offTop = this.refWrap.current.offsetTop;
     let wrapHeight = this.refWrap.current.offsetHeight;
     let contentHeight = this.refContent.current.offsetHeight;
     let contentTop = this.refContent.current.offsetTop;
@@ -178,9 +172,9 @@ class WhatIDo extends Component {
 
         <WhatRight>
           <MockupContainer>
-            <MockupImg src={MockupOne} ref={this.refMockup1} className={` scroll-image-${this.state.isFirst ? 'active' : 'deactive'}`}/>
-            <MockupImg src={MockupTwo} ref={this.refMockup2} className={` scroll-image-${this.state.isSecond ? 'active' : 'deactive'}`}/>
-            <MockupImg src={MockupThree} ref={this.refMockup3} className={` scroll-image-${this.state.isThird ? 'active' : 'deactive'}`}/>
+            <MockupImg src={MockupOne} className={` scroll-image-${this.state.isFirst ? 'active' : 'deactive'}`}/>
+            <MockupImg src={MockupTwo} className={` scroll-image-${this.state.isSecond ? 'active' : 'deactive'}`}/>
+            <MockupImg src={MockupThree} className={` scroll-image-${this.state.isThird ? 'active' : 'deactive'}`}/>
 
           </MockupContainer>
         </WhatRight>

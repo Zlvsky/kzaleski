@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components'
-import { InView  } from 'react-intersection-observer';
 
 import Js from '../../assets/images/hero/javascript.png'
 import NodeJs from '../../assets/images/hero/nodejs.png'
@@ -205,11 +204,11 @@ class Hero extends Component {
     let { stateIndex } = this.state;
     let { itemStates } = this.state;
   this.interval = setInterval(() => {
-    if (itemStates.length == stateIndex) {
+    if (itemStates.length === stateIndex) {
       stateIndex = 0;
     }
     itemStates = itemStates.map( (x, index, arr) => {
-        if(index == stateIndex) {
+        if(index === stateIndex) {
           return arr[index] = true;
         } else {
           return arr[index] = false;

@@ -1,13 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import MainTemplate from '../templates/MainTemplate/MainTemplate'
 import styled from 'styled-components'
-import { Link } from 'gatsby';
 import Img from "gatsby-image"
 
 import { useStaticQuery, graphql} from 'gatsby'
 
-import Phone from '../assets/images/icons/phone.svg'
-import Mail from '../assets/images/icons/mail.svg'
 import Bg from '../assets/images/background.png'
 import Aboutimg from '../assets/images/aboutjpg.jpg'
 import Aboutimg2 from '../assets/images/aboutjpg2.jpg'

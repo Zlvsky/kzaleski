@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import MainTemplate from '../templates/MainTemplate/MainTemplate'
 import styled from 'styled-components'
-import { Link } from 'gatsby';
 
 import Phone from '../assets/images/icons/phone.svg'
 import Mail from '../assets/images/icons/mail.svg'
@@ -10,7 +9,11 @@ import Bg from '../assets/images/background.png'
 
 const ContactSection = styled.section`
   background-image: url('${Bg}');
-
+  .required:after {
+    content: "*";
+    margin-left: .25rem;
+    color: #ef5f63;
+  }
 `
 const ContactTitle = styled.h2`
   font-size: 42px;
@@ -101,13 +104,6 @@ font-size: 38px;
 font-weight: 700;
 color: #000;
 padding: 0 2rem;
-`
-const ContactForm = styled.form`
-.required:after {
-  content: "*";
-  margin-left: .25rem;
-  color: #ef5f63;
-}
 `
 const FlexWrap = styled.div`
   display: flex;
