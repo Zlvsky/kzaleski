@@ -269,13 +269,11 @@ const KontaktPage = () => {
 
     <ContactRight>
       <ContactForm
-         id="contactForm"
-         name="contactForm"
-         method="POST"
-         data-netlify="true"
-         onSubmit={handleSubmit}
-        data-netlify-honeypot="bot-field"
-        action="/thanks/"
+        method="POST"
+        data-netlify="true"
+        id="contact"
+        name="contactForm"
+        onSubmit={handleSubmit}
         >
         <input type="hidden" name="contactForm" value="formularz kontaktowy" />
 

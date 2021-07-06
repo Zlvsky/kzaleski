@@ -166,7 +166,7 @@ class WhatIDo extends Component {
             <WhatTitle ref={this.refContent3} className={` scroll-item-${this.state.isThird ? 'active' : 'deactive'}`}> Pozycjonowanie <br /> stron internetowych</WhatTitle>
             <WhatSpan className={` scroll-item-${this.state.isThird ? 'active' : 'deactive'}`}>Do <strong> każdej realizacji </strong> strony internetowej, bądź sklepu oferuję podstawowe pozycjonowanie, dzięki czemu witryna będzie widoczna w wyszukiwarce, a Twojej firmie zapewni to:
               <br /> <br />
-              <strong>- Zwiększenie liczby wizyt w sklepie internetowym, bądź stronie</strong>
+              <strong>- Zwiększenie liczby wizyt w sklepie internetowym, bądź na stronie</strong>
               <br />
               <strong>- Zwiększenie liczby telefonów do firmy </strong>
               <br />
