@@ -217,34 +217,6 @@ const KontaktPage = () => {
   const handleChange = (e) => {
    setState({ ...state, [e.target.name]: e.target.value })
  }
- // const handleSubmit = (e) => {
- //    e.preventDefault()
- //    const form = e.target
- //    fetch('/', {
- //      method: 'POST',
- //      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
- //      body: encode({
- //        'contactForm': form.getAttribute('name'),
- //        ...state,
- //      }),
- //    })
- //      .then(() => navigate(form.getAttribute('action')))
- //      .catch((error) => alert(error))
- //  }
- const handleSubmit = (event) => {
-   event.preventDefault()
-   const form = event.target
-   fetch("/", {
-     method: "POST",
-     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-     body: encode({
-       "contactForm": form.getAttribute("name"),
-       ...state
-     })
-   })
-   .then(() => navigate(form.getAttribute('action')))
-   .catch((error) => alert(error))
- }
 
   return (
   <MainTemplate>
@@ -276,7 +248,6 @@ const KontaktPage = () => {
         name="contactForm"
         method="post"
         id="contact"
-        onSubmit={handleSubmit}
         >
         <input type="hidden" name="contactForm" value="formularz kontaktowy" />
 
