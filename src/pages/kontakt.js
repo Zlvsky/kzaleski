@@ -231,17 +231,20 @@ const KontaktPage = () => {
  //      .then(() => navigate(form.getAttribute('action')))
  //      .catch((error) => alert(error))
  //  }
-  const handleSubmit = (e) => {
-  e.preventDefault()
-  const form = e.target;
-  let formData = new FormData(form)
-  fetch('/', {
-    method: 'POST',
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  }).then(() => console.log('Form successfully submitted')).catch((error) =>
-    alert(error))
-}
+ const handleSubmit = (event) => {
+   event.preventDefault()
+   const form = event.target
+   fetch("/", {
+     method: "POST",
+     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+     body: encode({
+       "contactForm": form.getAttribute("name"),
+       ...state
+     })
+   })
+   .then(() => navigate(form.getAttribute('action')))
+   .catch((error) => alert(error))
+ }
 
   return (
   <MainTemplate>
@@ -269,10 +272,10 @@ const KontaktPage = () => {
 
     <ContactRight>
       <ContactForm
-        method="POST"
         data-netlify="true"
-        id="contact"
         name="contactForm"
+        method="post"
+        id="contact"
         onSubmit={handleSubmit}
         >
         <input type="hidden" name="contactForm" value="formularz kontaktowy" />
