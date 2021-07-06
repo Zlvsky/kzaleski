@@ -259,6 +259,7 @@ const KontaktPage = () => {
     <ContactRight>
       <ContactForm
          id="contactForm"
+         name="contactForm"
          method="POST"
          data-netlify="true"
          onSubmit={handleSubmit}
