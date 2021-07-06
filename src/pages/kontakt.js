@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import MainTemplate from '../templates/MainTemplate/MainTemplate'
 import styled from 'styled-components'
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Phone from '../assets/images/icons/phone.svg'
 import Mail from '../assets/images/icons/mail.svg'
@@ -204,19 +204,21 @@ transition-property: all;
   color: #fff;
 }
 `
-
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 const KontaktPage = () => {
-  const [state, setState] = React.useState({})
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  })
 
-  const handleChange = (e) => {
-   setState({ ...state, [e.target.name]: e.target.value })
- }
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   return (
   <MainTemplate>
@@ -244,13 +246,9 @@ const KontaktPage = () => {
 
     <ContactRight>
       <ContactForm
-        data-netlify="true"
-        name="contactForm"
-        method="post"
-        id="contact"
-        >
-        <input type="hidden" name="contactForm" value="formularz kontaktowy" />
-
+         id="contactForm"
+          method="POST"
+           data-netlify="true"
         <FormTitle>Formularz kontaktowy</FormTitle>
         <FlexWrap>
           <FormField>
@@ -259,8 +257,9 @@ const KontaktPage = () => {
               name='name'
                type='text'
                 id='input-name'
-                onChange={handleChange}
-                required aria-required="true"></FormInput>
+                 value={formState.name}
+                 onChange={handleChange}
+                  required aria-required="true"></FormInput>
           </FormField>
           <FormField>
             <FormLabel htmlFor='input-telephone' >Telefon</FormLabel>
@@ -268,8 +267,8 @@ const KontaktPage = () => {
               name='telephone'
                type='text'
                 id='input-telephone'
-                onChange={handleChange}>
-                </FormInput>
+                 value={formState.phone}
+                 onChange={handleChange}></FormInput>
           </FormField>
         </FlexWrap>
 
@@ -280,14 +279,17 @@ const KontaktPage = () => {
               name='emailAddress'
                type='email'
                 id='input-email'
-                required aria-required="true"
-                onChange={handleChange}></FormInput>
+                 value={formState.email}
+                 onChange={handleChange}
+                  required aria-required="true"></FormInput>
           </FormField>
           <FormField>
             <FormLabel htmlFor='input-subject' className="required">Temat</FormLabel>
             <FormSelect
               name='subject'
                id='input-subject'
+                value={formState.subject}
+                onChange={handleChange}
                  required aria-required="true">
               <FormOption value="Wybierz" defaultValue >Wybierz</FormOption>
               <FormOption value="Zwykłe pytanie">Zwykłe pytanie</FormOption>
@@ -303,8 +305,9 @@ const KontaktPage = () => {
             name="message"
              id='input-message'
               rows='5'
-              required aria-required="true"
-              onChange={handleChange}></FormMessage>
+               value={formState.message}
+               onChange={handleChange}
+                required aria-required="true"></FormMessage>
         </TextField>
 
         <TextField>
