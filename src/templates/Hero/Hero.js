@@ -37,6 +37,7 @@ const HeroWrap = styled.div`
   height: 120vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
   .active-icon {
   display: block;
   animation: ${iconAnimate} 2s ease-in;
@@ -104,7 +105,8 @@ const VectorImage = styled.img`
   object-fit: cover;
   position: sticky;
   @media only screen and (max-width: 768px) {
-    height: 200px;
+    height: 180px;
+    opacity: 0.2;
   }
 `
 
@@ -122,6 +124,7 @@ text-align: center;
   grid-column: 1 / 5;
   width: 100vw;
   padding: 0 15px;
+  z-index: 10;
 }
 `
 const HeroTitle = styled.span`
@@ -157,6 +160,8 @@ margin-left: 30px;
 `
 const IconImg = styled.img`
 padding: 8px;
+width: 56px;
+height: auto;
 }
 `
 const ArrowWrap = styled.div`

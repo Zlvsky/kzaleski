@@ -36,6 +36,7 @@ const HowBox = styled.div`
   height: 700px;
   @media only screen and (max-width: 768px) {
     height: auto;
+    padding: 0 10px;
   }
 `
 const HowTitle = styled.h1`
@@ -50,6 +51,8 @@ width: 100%;
 margin-top: 80px;
 @media only screen and (max-width: 768px) {
   flex-wrap: wrap;
+  margin: 20px 0;
+
 }
 `
 const HowColumns = styled.div`
@@ -59,7 +62,7 @@ const HowColumns = styled.div`
     color: #fff;
   }
   @media only screen and (max-width: 768px) {
-    width: 45%;
+    width: 100%;
 
   }
 `
@@ -86,6 +89,9 @@ const ColumnImg = styled.img`
   height: 250px;
   object-fit: contain;
   margin: 0 auto 0;
+  @media only screen and (max-width: 768px) {
+    height: 150px;
+  }
 `
 const HowIWork = () => {
 

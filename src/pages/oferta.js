@@ -44,21 +44,32 @@ height: 100%;
 display: flex;
 justify-content: center;
 padding: 1rem 0 0 0;
+@media only screen and (max-width: 768px) {
+  flex-wrap: wrap;
+}
 
 
 `
 const ServicesLeft = styled.div`
   width: 50%;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding-top: 150px;
+  }
 `
 const ServicesRight = styled.div`
   width: 50%;
   padding: 5% 0 5% 5%;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 const ServicesRight2 = styled.div`
   width: 50%;
   padding: 5% 0 5% 0;
   @media only screen and (max-width: 768px) {
     display: none;
+    width: 100%;
   }
 `
 const ServicesHeader = styled.h2`
@@ -102,6 +113,9 @@ const ImgWrap = styled.div`
   top:0;
   margin-top: -80px;
   text-align: right;
+  @media only screen and (max-width: 768px) {
+    right: 10%;
+  }
 `
 const ServicesImg = styled.img`
   vertical-align: middle;
@@ -111,6 +125,9 @@ const ServicesImg = styled.img`
   max-width: 100%;
   border: none;
   object-fit: cover;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }
 `
 const ImgWrap2 = styled.div`
   text-align: left;
@@ -143,6 +160,10 @@ const BlackContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
 `
 const BlackContainer2 = styled.div`
   position: relative;
@@ -152,6 +173,11 @@ const BlackContainer2 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0 10px;
+  }
 `
 const PriceSection = styled.div`
   background-image: url('${Bg}');
