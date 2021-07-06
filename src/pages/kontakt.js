@@ -207,8 +207,8 @@ transition-property: all;
 const KontaktPage = () => {
   const [formState, setFormState] = useState({
     name: "",
-    email: "",
-    phone: "",
+    emailAddress: "",
+    telephone: "",
     subject: "",
     message: "",
   })
@@ -247,8 +247,10 @@ const KontaktPage = () => {
     <ContactRight>
       <ContactForm
          id="contactForm"
+         name="contactForm"
           method="POST"
            data-netlify="true">
+           <input type="hidden" name="contactForm" value="formularz kontaktowy" />
         <FormTitle>Formularz kontaktowy</FormTitle>
         <FlexWrap>
           <FormField>
