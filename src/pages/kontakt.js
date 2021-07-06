@@ -248,7 +248,7 @@ const KontaktPage = () => {
       <ContactForm
          id="contactForm"
           method="POST"
-           data-netlify="true"
+           data-netlify="true">
         <FormTitle>Formularz kontaktowy</FormTitle>
         <FlexWrap>
           <FormField>
