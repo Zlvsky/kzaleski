@@ -12,6 +12,9 @@ const WhatWrap = styled.div`
   width: 100vw;
   position: relative;
   background-color: #F7F7F7;
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 `
 const WhatContainer = styled.div`
   position: relative;
@@ -29,12 +32,16 @@ height: 100%;
 width: 40%;
 @media only screen and (max-width: 768px) {
   width: 100%;
+  position: relative;
 }
 `
 const WhatRight = styled.div`
 position: sticky;
 height: 100%;
 width: 60%;
+@media only screen and (max-width: 768px) {
+  display: none;
+}
 `
 const WhatTitle = styled.h1`
 position: relative;
@@ -58,6 +65,9 @@ transform: translateY(0);
 font-weight: 300;
 line-height: 1.4;
 letter-spacing: 1px;
+@media only screen and (max-width: 768px) {
+  position: relative;
+}
 `
 const WhatButton = styled.button`
 display: block;
@@ -102,6 +112,10 @@ const LeftContainer = styled.div`
 position: sticky;
 top: 25%;
 display: block;
+@media only screen and (max-width: 768px) {
+  top: 0;
+  position: relative;
+}
 `
 
 class WhatIDo extends Component {

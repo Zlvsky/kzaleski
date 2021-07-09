@@ -23,13 +23,27 @@ a {
   transition: opacity 1.5s, transform .5s;
   position: sticky;
   opacity: 1;
-
+  @media only screen and (max-width: 768px) {
+  position: relative;
+  opacity: 1;
+}
 }
 .scroll-item-deactive {
   transition: opacity 1s, transform 1.5s;
   position: sticky;
   transform: translateY(-250%) !important;
   opacity: 0;
+}
+@media only screen and (max-width: 768px) {
+  .scroll-item-deactive {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    position: relative;
+  }
+  .scroll-item-active {
+    opacity: 1;
+    position: relative;
+  }
 }
 .scroll-image-active {
   transition: all 0.5s ease-in-out;
