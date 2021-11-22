@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Img from "gatsby-image"
 
@@ -57,11 +57,27 @@ const ProjectsList = styled.div`
     max-width:700px;
     margin: 0 auto 0;
   }
+  .itemUl.hasSelect .listActive {
+    transform: translateY(0) !important;
+    transform: scale(1.1) !important;
+    &:hover {
+      margin-top: 0;
+    }
+  }
+  .itemUl.hasSelect .listNotActive-bottom {
+    transform: translateY(550px) !important;
+  }
+  .itemUl.hasSelect .listNotActive-upper {
+    transform: translateY(-550px) !important;
+  }
+  .itemUl.hasSelect .listActive .itemDesc {
+    opacity: 1;
+  }
   .itemLi {
     display: inline-block;
     width: 100%;
     position: absolute;
-    transition: all 0.2s ;
+    transition: transform 0.6s, margin 0.2s ;
     cursor: pointer;
     box-sizing: border-box;
     height: 500px;
@@ -70,7 +86,6 @@ const ProjectsList = styled.div`
     }
     &:hover {
       margin-top: -29px;
-      transform-origin: center top;
       @media (max-width: 600px) {
         transform: translateY(-5px);
         transform-origin: center top;
@@ -81,6 +96,12 @@ const ProjectsList = styled.div`
     }
     &:hover .Gitpng {
       opacity: 1;
+    }
+    .listActive {
+
+    }
+    .listNotActive {
+
     }
   }
   .itemContainer {
@@ -145,12 +166,22 @@ const Items = ( { data } ) => (
   </ul>
 
 )
-const Screens = ( { data } ) =>  (
-  <ul className="itemUl">
+
+
+
+const Screens = ( { data } ) =>  {
+  const [isActive, setIsActive] = useState(0);
+  const [hasSelect, setHasSelect] = useState(false);
+  return (
+  <ul className={`itemUl ${hasSelect ? 'hasSelect' : ''}`}>
       {data.allBigscreensJson.nodes.map((bigLi, index) => (
-        <li className="itemLi"
+        <li className={`itemLi ${(isActive === index && hasSelect) ? 'listActive' : (isActive > index ? 'listNotActive-upper' : 'listNotActive-bottom') }`}
           key={index}
           style={{zIndex: 10 + index, transform: `translate3d(${0}px, ${64 * index}px, ${-90 + index * 10}px)`}}
+          onClick={() => {
+            setIsActive(index)
+            setHasSelect(prevSelect => !prevSelect)
+          }}
           >
           <div className="itemContainer">
             <Img fluid={bigLi.src.childImageSharp.fluid} className="itemImg" alt="Realizacja strony internetowej"/>
@@ -160,10 +191,13 @@ const Screens = ( { data } ) =>  (
       ))}
   </ul>
 )
+}
 
 
 
 const Projects = () => {
+
+
   const data = useStaticQuery(graphql`
     query {
       allImagesJson {
@@ -173,7 +207,7 @@ const Projects = () => {
           git
           src {
             childImageSharp {
-              fluid(quality: 100, maxWidth: 700) {
+              fluid(quality: 100, maxWidth: 780) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -186,7 +220,7 @@ const Projects = () => {
           live
           src {
             childImageSharp {
-              fluid(quality: 100, maxWidth: 700) {
+              fluid(quality: 100, maxWidth: 780) {
                 ...GatsbyImageSharpFluid
               }
             }

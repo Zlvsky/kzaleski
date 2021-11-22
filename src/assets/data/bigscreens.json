@@ -5,13 +5,23 @@
     "live": "https://konkrecik.pl/"
   },
   {
-    "name": "Inli Lamps",
-    "src": "../images//lists/libig5.jpg",
-    "live": "https://www.inli.pl/"
+    "name": "Kwiaciarnia Góraleczka",
+    "src": "../images//lists/screenbig5.jpg",
+    "live": "/"
   },
   {
     "name": "Eurooil.com.pl",
     "src": "../images//lists/screenbig1.jpg",
     "live": "https://eurooil.com.pl/"
+  },
+  {
+    "name": "PMIGeodezja.pl",
+    "src": "../images//lists/screenbig3.jpg",
+    "live": "https://pmigeodezja.pl/"
+  },
+  {
+    "name": "TUkuchnie.pl",
+    "src": "../images//lists/screenbig4.jpg",
+    "live": "https://tukuchnie.pl"
   }
 ]
