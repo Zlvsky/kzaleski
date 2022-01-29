@@ -3,8 +3,6 @@ import MainTemplate from '../templates/MainTemplate/MainTemplate'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-import { useStaticQuery, graphql} from 'gatsby'
-
 import Bg from '../assets/images/background.png'
 import Aboutimg from '../assets/images/aboutjpg.jpg'
 import Aboutimg2 from '../assets/images/aboutjpg2.jpg'
@@ -125,23 +123,6 @@ const InstaImage = styled.div`
 
 
 const OmniePage = () => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//   allInstagramContent(limit: 7) {
-//     nodes {
-//       permalink
-//       localImage {
-//         childImageSharp {
-//           fluid(quality: 100, maxWidth: 260) {
-//             ...GatsbyImageSharpFluid
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-//     `)
-
   return (
   <MainTemplate>
     <AboutSection>
@@ -177,23 +158,6 @@ const OmniePage = () => {
     </AboutContainer>
     </AboutSection>
 
-    // <InstaHeader>Ostatnie posty z Instagrama</InstaHeader>
-    // <a href="https://instagram.com/zlvskystuff"><InstaParagraph>@zlvskystuff</InstaParagraph></a>
-    // <InstaContainer>
-    //   {data.allInstagramContent.nodes.map((igName, index) => (
-    //     <InstaImage>
-    //     <a href={igName.permalink}>
-    //       <Img
-    //       key={index}
-    //       fluid={igName.localImage.childImageSharp.fluid}
-    //       width="400"
-    //       height="400"
-    //       className="igImage"/>
-    //     </a>
-    //     </InstaImage>
-    //   ))}
-    //
-    // </InstaContainer>
   </MainTemplate>
 )
 }
