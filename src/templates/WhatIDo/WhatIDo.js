@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 
 import Mockup from '../../assets/images/mockup.png'
-import MockupOne from '../../assets/images/mock-1.png'
-import MockupTwo from '../../assets/images/mock-2.png'
+import MockupOne from '../../assets/images/mockup-1n.png'
+import MockupTwo from '../../assets/images/mockup-2n.png'
 import MockupThree from '../../assets/images/mock-3.png'
 
 const WhatWrap = styled.div`

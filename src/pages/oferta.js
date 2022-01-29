@@ -217,7 +217,7 @@ const PriceContainer = styled.div`
 `
 const PriceColumn = styled.div`
   width: 30%;
-  padding: 2% 5%;
+  padding: 0 5%;
   margin: 0 1%;
   height: 100%;
   box-shadow: 0px 0px 30px -5px rgb(0 15 35 / 15%);
