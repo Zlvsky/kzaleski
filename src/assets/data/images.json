@@ -9,18 +9,18 @@
     "name": "Discord BOT",
     "src": "../images//lists/libig4.jpg"
     ,"live": "",
-    "git": "https://github.com/Zlvsky/DRONO-BOT"
-  },
-  {
-    "name": "E-Commerce App",
-    "src": "../images//lists/libig1n.jpg",
-    "live": "",
     "git": ""
   },
   {
-    "name": "Sunset Catch",
-    "src": "../images//lists/libig2.jpg",
-    "live": "https://young-telling-check.glitch.me",
-    "git": "https://github.com/Zlvsky/sunsetcatcher"
+    "name": "React moodboard",
+    "src": "../images//lists/libig2n.jpg",
+    "live": "https://github.com/Zlvsky/React-Konva-moodboard",
+    "git": "https://github.com/Zlvsky/React-Konva-moodboard"
+  },
+  {
+    "name": "E-Commerce App",
+    "src": "../images//lists/libig1nn.jpg",
+    "live": "https://github.com/Zlvsky/One-place",
+    "git": "https://github.com/Zlvsky/One-place"
   }
 ]

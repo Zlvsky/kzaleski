@@ -1,4 +1,5 @@
 const path = require('path');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -54,12 +55,6 @@ module.exports = {
         path: path.join(__dirname, `src`, 'assets', `images`, 'lists'),
       },
     },
-    // {
-    //  resolve: `gatsby-source-instagram-all`,
-    //  options: {
-    //    access_token: "IGQVJVRnhiTEl3cGxGMmtHbENIeXdMcTVEV0x3ckRQVXVnU0RIU1hsV0FXNDlrZAEZAiTlVxVFRRTl9XZA3IxMFhJOXp6eFNLS3hQcWg3MlN6S2ZApU3k4YzZAiOVp4UG9LdHBuN2V0LW5zMjNHNkdZAZATFvWgZDZD"
-    //  },
-    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

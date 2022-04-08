@@ -129,9 +129,9 @@ const OmniePage = () => {
       <AboutTitle>Poznaj mnie bliżej.</AboutTitle>
     <AboutContainer>
       <AboutLeft>
-        <AboutHeader>Cześć, tu Krzyś. 19-letni dynamicznie rozwijający się samouk, developer front-end'owy i webowy z miejscowości Łapy.</AboutHeader>
+        <AboutHeader>Cześć, tu Krzyś. 20-letni dynamicznie rozwijający się samouk, developer front-end'owy i webowy z miejscowości Łapy.</AboutHeader>
         <AboutText>Od 2018r uczę się programować, projektować i tworzyć aplikacje oraz <strong class="colorful"> strony internetowe </strong>. Swoją więdzę zagłębiałem poprzez czytanie książek, braniem udziału w kursach,  tworzeniem projektów i braniem udziału w praktykach. <br /> <br />
-                   W przeciągu ostatnich 6 miesięcy <strong class="colorful"> stworzyłem </strong> około <strong class="colorful"> 11 stron internetowych</strong>, w tym <strong class="colorful"> 4 sklepy online </strong>. <br /> <br />
+                   Na swoim koncie posiadam <strong class="colorful"> stworzonych </strong> około <strong class="colorful"> 20 stron internetowych</strong>, w tym <strong class="colorful"> 4 sklepy online </strong>. <br /> <br />
                  Specializuję się w <strong class="colorful"> projektowaniu stron </strong>, <strong class="colorful"> tworzeniem i zarządzaniem stron internetowych </strong>, eCommerce'em <strong class="colorful">(sklepy internetowe) </strong> oraz wciąż poszerzam swoją więdze z zakresu <strong class="colorful"> SEO, pozycjonowania stron.</strong>
         </AboutText>
     </AboutLeft>

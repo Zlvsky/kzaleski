@@ -78,6 +78,7 @@ transition-property: all;
 }
 `
 const Footer = () => {
+  const actualYear = new Date().getFullYear();
   return (
     <MyFooter>
         <FooterWrap>
@@ -97,7 +98,7 @@ const Footer = () => {
             <FooterA href="mailto:zlvsky@icloud.com">zlvsky@icloud.com</FooterA>
           </FooterColumn>
         </FooterWrap>
-        <Copyright>Krzysztof Zaleski © 2021 Wszelkie prawa zastrzeżone</Copyright>
+        <Copyright>Krzysztof Zaleski © {actualYear} Wszelkie prawa zastrzeżone</Copyright>
     </MyFooter>
   )
 }
